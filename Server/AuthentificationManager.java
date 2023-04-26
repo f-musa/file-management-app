@@ -16,16 +16,16 @@ public class AuthentificationManager {
     private synchronized static void registerUser(String username, String password) {
         try {
             System.out.println("Im in register user");
-            PrintWriter writer = new PrintWriter(datafilePath, "UTF-8");
+            PrintWriter writer = new PrintWriter(new FileOutputStream(new File(datafilePath),true));
             String encodedPassword = Base64.getEncoder().encodeToString(password.getBytes());
             
             writer.println(username + "," + encodedPassword);
             writer.close();
             
             /* create a folder for the user  */
-            File file = new File("data/users/"+username+"/init.txt");
+            File file = new File("./Server/data/users/"+username+"/init.txt");
             file.getParentFile().mkdirs();
-            //file.createNewFile();
+            
 
         } catch (Exception e) {
             System.out.println(e);
