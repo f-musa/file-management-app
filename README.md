@@ -5,6 +5,6 @@ A limited system for file synchronization and sharing.
 ## Compile Server
 ```javac -d classes ./Server/AppServer.java ./Server/AuthentificationManager.java ./Server/ClientHandler.java ./Server/User.java ./Enums/*.java```
 ## Run Client
-```javac -cp "./classes/" Client.Client```
+```java -cp "./classes/" Client.Client```
 ## Run Server 
-```javac -cp "./classes/" Server.AppServer```
+```java -cp "./classes/" Server.AppServer```
